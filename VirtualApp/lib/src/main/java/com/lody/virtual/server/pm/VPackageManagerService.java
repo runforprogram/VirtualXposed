@@ -262,6 +262,7 @@ public class VPackageManagerService extends IPackageManager.Stub {
         if (packageInfo != null) {
             Parcel parcel = Parcel.obtain();
             packageInfo.writeToParcel(parcel, 0);
+            parcel.setDataPosition(0);
             PackageInfo info = PackageInfo.CREATOR.createFromParcel(parcel);
             parcel.recycle();
             return info;
